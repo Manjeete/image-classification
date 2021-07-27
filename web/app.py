@@ -15,7 +15,7 @@ db = client.ImageRecognition
 users = db["Users"]
 
 def UserExist(username):
-    if users.find({"username":username}).count()==0:
+    if users.count_documents({"username":username})==0:
         return False
     else:
         return True
